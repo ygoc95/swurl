@@ -2,7 +2,6 @@ package cmd
 
 import (
 	"fmt"
-
 	"github.com/spf13/cobra"
 	"github.com/ygoc95/swurl/services"
 )
@@ -17,8 +16,7 @@ var createCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("Creating test cases")
 		url, _ := cmd.Flags().GetString("url")
-		fmt.Printf("url: %v\n", url)
-		services.GetJsonFromUrl(url)
+		services.CreateHurlFile(url)
 	},
 }
 
@@ -35,8 +33,4 @@ func init() {
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
 	// createCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
-}
-
-func getJson(url *string)  {
-	
 }

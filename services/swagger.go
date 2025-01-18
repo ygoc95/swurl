@@ -39,6 +39,8 @@ func  GetJsonFromUrl(jsonUrl string) *Swagger{
 }
 
 type Swagger struct {
+	Host string `json:"host"`
+	BasePath string `json:"basePath"`
 	Paths  map[string]map[string]Endpoint `json:"paths"`
 }
 
